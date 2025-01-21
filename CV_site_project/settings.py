@@ -175,13 +175,13 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/app.log'),
+            'filename': os.path.join(BASE_DIR, os.getenv('APP_LOG_FILE', 'app.log')),
             'formatter': 'verbose',
         },
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/errors.log'),
+            'filename': os.path.join(BASE_DIR, os.getenv('ERROR_LOG_FILE', 'errors.log')),
             'formatter': 'verbose',
         },
     },
